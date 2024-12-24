@@ -11,7 +11,6 @@ const OrderForm = ({ order, onSave, onClose }) => {
 
   useEffect(() => {
     if (order) {
-      // Перетворення полів для відповідності формату сервера
       setFormData({
         userId: order.user_id || "",
         orderDate: order.order_date || "",
@@ -39,7 +38,6 @@ const OrderForm = ({ order, onSave, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Простий приклад валідації перед збереженням
     if (
       !formData.userId ||
       !formData.orderDate ||
@@ -50,7 +48,6 @@ const OrderForm = ({ order, onSave, onClose }) => {
       return;
     }
 
-    // Викликаємо onSave з форматом, який відповідає серверу
     onSave({
       userId: parseInt(formData.userId, 10),
       totalAmount: parseFloat(formData.totalAmount),

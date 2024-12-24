@@ -45,8 +45,6 @@ const UserSection = () => {
       const query = new URLSearchParams();
       if (searchUsername) query.append("username", searchUsername);
       if (searchEmail) query.append("email", searchEmail);
-
-      // Передаємо відфільтроване значення статусу або залишаємо порожнім для "всі"
       if (searchRole) {
         if (searchRole === "користувач") {
           query.append("role", "customer");

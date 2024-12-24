@@ -7,7 +7,7 @@ import {
 } from "../../services/api";
 import CategoryTable from "./CategoryTable";
 import CategoryForm from "./CategoryForm";
-import debounce from "lodash.debounce"; // для оптимізації пошуку
+import debounce from "lodash.debounce";
 
 const CategoriesSection = () => {
   const [categories, setCategories] = useState([]);

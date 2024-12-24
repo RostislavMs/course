@@ -12,7 +12,6 @@ async function getAllUsers(req, res) {
     request.input("username", sql.VarChar, `%${username}%`);
     request.input("email", sql.VarChar, `%${email}%`);
 
-    // Якщо role порожнє, встановлюємо фільтр на всі записи.
     if (role) {
       request.input("role", sql.VarChar, role.toLowerCase());
     } else {

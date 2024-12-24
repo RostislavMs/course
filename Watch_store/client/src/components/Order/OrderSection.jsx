@@ -14,7 +14,7 @@ const OrderSection = () => {
     orderDateFrom: "",
     orderDateTo: "",
   });
-  const [sortOrder, setSortOrder] = useState(""); // Сортування
+  const [sortOrder, setSortOrder] = useState("");
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [isOrderModalOpen, setOrderModalOpen] = useState(false);
 
@@ -51,7 +51,6 @@ const OrderSection = () => {
   const handleAddOrUpdateOrder = async (order) => {
     try {
       if (selectedOrder) {
-        // Редагування
         await axios.put(
           `http://localhost:5000/api/orders/${selectedOrder.order_id}`,
           {
@@ -62,7 +61,6 @@ const OrderSection = () => {
           }
         );
       } else {
-        // Додавання нового замовлення
         await axios.post("http://localhost:5000/api/orders", {
           userId: order.userId,
           totalAmount: parseFloat(order.totalAmount),

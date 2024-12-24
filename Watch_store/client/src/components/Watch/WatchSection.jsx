@@ -16,7 +16,7 @@ const WatchSection = () => {
   const [brandFilter, setBrandFilter] = useState("");
   const [priceFilter, setPriceFilter] = useState({ min: "", max: "" });
   const [stockFilter, setStockFilter] = useState("");
-  const [sortOrder, setSortOrder] = useState(""); // Додаємо стан для сортування
+  const [sortOrder, setSortOrder] = useState("");
   const [selectedWatch, setSelectedWatch] = useState(null);
   const [isWatchModalOpen, setWatchModalOpen] = useState(false);
 
@@ -32,7 +32,7 @@ const WatchSection = () => {
       minPrice: priceFilter.min || undefined,
       maxPrice: priceFilter.max || undefined,
       minStock: stockFilter || undefined,
-      sortOrder: sortOrder || undefined, // Передаємо тип сортування
+      sortOrder: sortOrder || undefined,
     };
 
     const data = await fetchWatches(filters);
@@ -65,7 +65,6 @@ const WatchSection = () => {
       );
     }
 
-    // Локальне сортування (резервне, якщо серверне недоступне)
     if (sortOrder === "asc") {
       filtered.sort((a, b) => a.price - b.price);
     } else if (sortOrder === "desc") {
