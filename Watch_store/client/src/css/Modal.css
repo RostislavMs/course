@@ -1,0 +1,78 @@
+/* client/src/components/Modal.css */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--modal-content-bg);
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+label {
+  display: flex;
+  margin-bottom: 10px;
+  font-weight: bold;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+textarea {
+  max-width: 100%;
+  resize: vertical;
+  max-height: 300px;
+}
+.primary-btn {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-color);
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+}
+
+button {
+  margin-right: 10px;
+}
